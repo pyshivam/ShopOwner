@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:drawableStart="@drawable/ic_account_circle_blue_24dp"
+        android:drawableLeft="@drawable/ic_account_circle_blue_24dp"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/e_address"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/input_text_color"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.394" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_lock_blue_24dp"
+        android:drawableLeft="@drawable/ic_lock_blue_24dp"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="@string/passwd"
+        android:inputType="textPassword"
+        android:textColor="@color/input_text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/email_input"
+        app:layout_constraintStart_toStartOf="@+id/email_input"
+        app:layout_constraintTop_toBottomOf="@+id/email_input" />
+
+    <Button
+        android:id="@+id/signin_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/signin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password_input"
+        app:layout_constraintStart_toStartOf="@+id/password_input"
+        app:layout_constraintTop_toBottomOf="@+id/password_input"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/not_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/not_reg"
+        app:layout_constraintStart_toStartOf="@+id/signin_btn"
+        app:layout_constraintTop_toBottomOf="@+id/signin_btn" />
+
+    <TextView
+        android:id="@+id/reg_here"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="@string/reg_here"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/not_reg"
+        app:layout_constraintTop_toTopOf="@+id/not_reg"
+        android:focusable="true" />
+
+</android.support.constraint.ConstraintLayout>

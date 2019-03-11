@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Shop</string>
+    <string name="e_address">Email addresss</string>
+    <string name="passwd">Password</string>
+    <string name="signin">Sign In</string>
+    <string name="not_reg">not registred yet?</string>
+    <string name="reg_here"><u>register here</u></string>
+    <string name="s_nam">Shop Name</string>
+    <string name="o_nam"> Owner Name</string>
+    <string name="add">Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="phone">Phone number</string>
+    <string name="reg">Register</string>
+    <string name="alredy_reg">Already registered?  <u>Signin</u></string>
+    <string name="pin">Pin code</string>
+    <string name="shop_name">Shop Name Here</string>
+    <string name="shop_add">Shop address wil goes here</string>
+    <string name="s_info">Shop Information </string>
+    <string name="c_info">Customer Information</string>
+    <string name="add_due">Add due</string>
+    <string name="P_info">Product Information</string>
+    <string name="rem_due">Clear Due</string>
+</resources>

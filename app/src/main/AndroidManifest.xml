@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".auth.RegisterActivity" />
+        <activity android:name=".dashboard.DashboardActivity" />
     </application>
 
 </manifest>

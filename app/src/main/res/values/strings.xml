@@ -21,4 +21,7 @@
     <string name="add_due">Add due</string>
     <string name="P_info">Product Information</string>
     <string name="rem_due">Clear Due</string>
+    <string name="add_p">add</string>
+    <string name="rem">remove</string>
+    <string name="show">Show</string>
 </resources>

@@ -26,6 +26,7 @@
                 android:layout_height="139dp"
                 android:layout_marginTop="5dp"
                 android:adjustViewBounds="true"
+                app:srcCompat="@drawable/img_avatar"
                 tools:srcCompat="@drawable/img_avatar" />
 
             <EditText

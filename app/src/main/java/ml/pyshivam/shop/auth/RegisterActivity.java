@@ -22,6 +22,9 @@ import ml.pyshivam.shop.R;
 import ml.pyshivam.shop.api.ShopAPI;
 import ml.pyshivam.shop.api.auth.SignupRequest;
 import ml.pyshivam.shop.api.auth.SignupShopSuccess;
+import ml.pyshivam.shop.dashboard.DashboardActivity;
+import ml.pyshivam.shop.utils.Common;
+import ml.pyshivam.shop.utils.SharedPrefs;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     String IMEI = null;
     private TelephonyManager telmamanger;
+    SharedPrefs sharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         pin_code_in = findViewById(R.id.pin_code_in);
         reg_btn = findViewById(R.id.reg_btn);
         telmamanger = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        sharedPrefs = new SharedPrefs(getSharedPreferences(Common.MAIN, 0));
 
 
         // Here, thisActivity is the current activity
@@ -138,7 +143,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    private void registerShop(SignupRequest signupRequest) {
+    private void registerShop(final SignupRequest signupRequest) {
         Call<SignupShopSuccess> signupShopSuccessCall = ShopAPI.getShopService().registerShop(signupRequest);
         signupShopSuccessCall.enqueue(new Callback<SignupShopSuccess>() {
             @Override
@@ -146,7 +151,26 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 if (response.code() == 200){
                     SignupShopSuccess res = response.body();
                     assert res != null;
-                    Toast.makeText(RegisterActivity.this, res.getMessage() + " " + res.getToken(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, res.getMessage() , Toast.LENGTH_SHORT).show();
+
+
+                    sharedPrefs.putString(Common.EMAIL, signupRequest.getOwner_email());
+                    sharedPrefs.putString(Common.SHOP_NAME, signupRequest.getShop_name());
+                    sharedPrefs.putString(Common.SHOP_ADD, signupRequest.getShop_address());
+                    sharedPrefs.putString(Common.SHOP_CITY, signupRequest.getShop_city());
+                    sharedPrefs.putString(Common.SHOP_ID, res.getShop_id());
+                    sharedPrefs.putString(Common.SHOP_STATE, signupRequest.getShop_state());
+                    sharedPrefs.putString(Common.SHOP_PIN_CODE, String.valueOf(signupRequest.getShop_pin_code()));
+                    sharedPrefs.putString(Common.SHOP_PHONE, String.valueOf(signupRequest.getShop_telephone()));
+                    sharedPrefs.putString(Common.OWNER_EMAIL, signupRequest.getOwner_email());
+                    sharedPrefs.putString(Common.OWNER_NAME, signupRequest.getOwner_name());
+                    sharedPrefs.putString(Common.OWNER_PHONE, String.valueOf(signupRequest.getOwner_pno()));
+                    sharedPrefs.putString(Common.IMEI, String.valueOf(signupRequest.getImei()));
+                    sharedPrefs.putString(Common.SESSION_TOKEN, res.getToken());
+                    sharedPrefs.putBoolean(Common.IS_LOGGED, true);
+
+                    Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+                    startActivity(intent);
                 }
 
             }

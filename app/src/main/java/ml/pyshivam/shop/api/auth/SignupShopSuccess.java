@@ -12,9 +12,23 @@ public class SignupShopSuccess {
     @SerializedName("status")
     @Expose
     private Integer status;
+
     @SerializedName("token")
     @Expose
     private String token;
+
+
+    public String getShop_id() {
+        return shop_id;
+    }
+
+    public void setShop_id(String shop_id) {
+        this.shop_id = shop_id;
+    }
+
+    @SerializedName("shop_id")
+    @Expose
+    private String shop_id;
 
     public String getMessage() {
         return message;

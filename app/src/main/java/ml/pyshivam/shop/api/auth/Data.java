@@ -11,7 +11,7 @@ public class Data {
     private String email;
     @SerializedName("imei")
     @Expose
-    private Integer imei;
+    private String imei;
     @SerializedName("owner_email")
     @Expose
     private String ownerEmail;
@@ -20,7 +20,7 @@ public class Data {
     private String ownerName;
     @SerializedName("owner_pno")
     @Expose
-    private Integer ownerPno;
+    private String ownerPno;
     @SerializedName("session_token")
     @Expose
     private String sessionToken;
@@ -38,13 +38,13 @@ public class Data {
     private String shopName;
     @SerializedName("shop_pin_code")
     @Expose
-    private Integer shopPinCode;
+    private String shopPinCode;
     @SerializedName("shop_state")
     @Expose
     private String shopState;
     @SerializedName("shop_telephone")
     @Expose
-    private Integer shopTelephone;
+    private String shopTelephone;
 
     public String getEmail() {
         return email;
@@ -54,11 +54,11 @@ public class Data {
         this.email = email;
     }
 
-    public Integer getImei() {
+    public String getImei() {
         return imei;
     }
 
-    public void setImei(Integer imei) {
+    public void setImei(String imei) {
         this.imei = imei;
     }
 
@@ -78,11 +78,11 @@ public class Data {
         this.ownerName = ownerName;
     }
 
-    public Integer getOwnerPno() {
+    public String getOwnerPno() {
         return ownerPno;
     }
 
-    public void setOwnerPno(Integer ownerPno) {
+    public void setOwnerPno(String ownerPno) {
         this.ownerPno = ownerPno;
     }
 
@@ -126,11 +126,11 @@ public class Data {
         this.shopName = shopName;
     }
 
-    public Integer getShopPinCode() {
+    public String getShopPinCode() {
         return shopPinCode;
     }
 
-    public void setShopPinCode(Integer shopPinCode) {
+    public void setShopPinCode(String shopPinCode) {
         this.shopPinCode = shopPinCode;
     }
 
@@ -142,11 +142,11 @@ public class Data {
         this.shopState = shopState;
     }
 
-    public Integer getShopTelephone() {
+    public String getShopTelephone() {
         return shopTelephone;
     }
 
-    public void setShopTelephone(Integer shopTelephone) {
+    public void setShopTelephone(String shopTelephone) {
         this.shopTelephone = shopTelephone;
     }
 

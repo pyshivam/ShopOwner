@@ -24,4 +24,12 @@
     <string name="add_p">add</string>
     <string name="rem">remove</string>
     <string name="show">Show</string>
+    <string name="view">View</string>
+    <string name="logout">Logout</string>
+    <string name="owner">Owner Details: </string>
+    <string name="name">Name: </string>
+    <string name="o_name">Owner name</string>
+    <string name="email">Email: </string>
+    <string name="phon">Phone: </string>
+    <string name="close">Close</string>
 </resources>

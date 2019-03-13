@@ -22,5 +22,17 @@ public class SharedPrefs {
         editor.commit();
     }
 
+    public String getString(String key){
+        return sharedpreferences.getString(key, " ");
+    }
+
+    public Boolean getBoolean(String key){
+        return sharedpreferences.getBoolean(key, false);
+    }
+
+    public void clear(){
+        sharedpreferences.edit().clear().commit();
+    }
+
 
 }
